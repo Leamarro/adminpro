@@ -7,6 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
 import {FormsModule} from '@angular/forms'
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+import { NgChartsModule } from 'ng2-charts';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 
 
 
@@ -18,7 +21,9 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
-        IncrementadorComponent
+        IncrementadorComponent,
+        GraficoDonaComponent,
+        AccoutSettingsComponent
     ],
     exports: [
         DashboardComponent,
@@ -29,6 +34,7 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
+        NgChartsModule
     ]
 })
 
