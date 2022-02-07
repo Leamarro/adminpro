@@ -15,6 +15,7 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
 
 
 
+
 @NgModule({
     declarations: [
         PagesComponent,
@@ -23,7 +24,7 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
         Graficas1Component,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccoutSettingsComponent
+        AccoutSettingsComponent,
     ],
     exports: [
         DashboardComponent,
