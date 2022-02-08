@@ -10,16 +10,12 @@ import { ChartData, ChartType } from 'chart.js';
 })
 export class GraficoDonaComponent implements OnInit {
 
-  @Input() doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
-  @Input() public doughnutChartData: ChartData<'doughnut'> = {
+  @Input() doughnutChartLabels: string[] = [];
+  @Input() public doughnutChartData: ChartData<any> = {
     labels: this.doughnutChartLabels,
-    datasets: [
-      { data: [ 350, 450, 100 ] },
-      { data: [ 50, 150, 120 ] },
-      { data: [ 250, 130, 70 ] }
-    ]
+    datasets: []
   };
-  @Input() public doughnutChartType: ChartType = 'doughnut';
+  @Input() public doughnutChartType: string = '';
 
   constructor() { }
 

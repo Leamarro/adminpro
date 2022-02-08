@@ -10,6 +10,7 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 import { NgChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -25,6 +26,7 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
         IncrementadorComponent,
         GraficoDonaComponent,
         AccoutSettingsComponent,
+        RxjsComponent,
     ],
     exports: [
         DashboardComponent,
