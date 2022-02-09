@@ -3,16 +3,18 @@
 
     <div class="col-6">
         <div class="card">
+            {{graficos.grafico1.leyenda}}
             <div class="card-body">
-                <app-grafico-dona [doughnutChartLabels]="graficos.grafico1.labels"></app-grafico-dona>
+                <app-grafico-dona [chartLabels]="graficos.grafico1.labels" [chartData]="graficos.grafico1.data" chartType="doughnut"></app-grafico-dona>
             </div>
         </div>
     </div>
 
     <div class="col-6">
         <div class="card">
+            {{graficos.grafico2.leyenda}}
             <div class="card-body">
-                <app-grafico-dona [doughnutChartLabels]="graficos.grafico2.labels"></app-grafico-dona>
+                <app-grafico-dona></app-grafico-dona>
             </div>
         </div>
     </div>

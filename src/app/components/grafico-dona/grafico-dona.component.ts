@@ -10,12 +10,16 @@ import { ChartData, ChartType } from 'chart.js';
 })
 export class GraficoDonaComponent implements OnInit {
 
-  @Input() doughnutChartLabels: string[] = [];
-  @Input() public doughnutChartData: ChartData<any> = {
+ @Input('chartLabels') doughnutChartLabels: string[] = [];
+ @Input('chartData') doughnutChartData: ChartData<'doughnut'> = {
     labels: this.doughnutChartLabels,
-    datasets: []
+    datasets: [
+      { data: [ 350, 450, 100 ] },
+      { data: [ 50, 150, 120 ] },
+      { data: [ 250, 130, 70 ] }
+    ]
   };
-  @Input() public doughnutChartType: string = '';
+  @Input('chartType') doughnutChartType: ChartType = 'doughnut';
 
   constructor() { }
 
@@ -23,3 +27,19 @@ export class GraficoDonaComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+// @Input('chartLabels') doughnutChartLabels: string[] = [];
+// @Input('chartData') doughnutChartData: ChartData<'doughnut'> = {
+//    labels: this.doughnutChartLabels,
+//    datasets: [
+//      { data: [ 350, 450, 100 ] },
+//      { data: [ 50, 150, 120 ] },
+//      { data: [ 250, 130, 70 ] }
+//    ]
+//  };
+//  @Input('chartType') doughnutChartType: ChartType = 'doughnut';

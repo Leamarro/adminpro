@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChartData } from 'chart.js';
 
 @Component({
   selector: 'app-graficas1',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class Graficas1Component implements OnInit {
-
 
 
   graficos: any = {
