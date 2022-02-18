@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SettingsService, SidebarService, SharedService } from './service.index';
+import {  } from './guards/login-guard.guard';
+import { SettingsService,
+         SidebarService,
+          SharedService,
+         UsuarioService,
+         LoginGuardGuard,
+         SubirArchivoService
+    } from './service.index';
 
 
 
@@ -12,7 +19,7 @@ import { SettingsService, SidebarService, SharedService } from './service.index'
     CommonModule
   ],
   providers: [
-    SettingsService, SidebarService, SharedService 
+    SettingsService, SidebarService, SharedService, UsuarioService, SubirArchivoService, LoginGuardGuard
   ]
 })
 export class ServiceModule { }

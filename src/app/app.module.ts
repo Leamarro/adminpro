@@ -1,20 +1,27 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './login/register.component';
+import { NgModule } from '@angular/core';
 
-
-//Rutas
+// Rutas
 import { APP_ROUTES } from './app.routes';
-
 
 // Modulos
 import { PagesModule } from './pages/pages.module';
-import { FormsModule } from '@angular/forms';
 
-//Servisios
+// temporal
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Servicios
 import { ServiceModule } from './services/service.module';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+// Componentes
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register.component';
 
 
 
@@ -23,15 +30,15 @@ import { ServiceModule } from './services/service.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-
-
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ServiceModule
+    ReactiveFormsModule,
+    ServiceModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
