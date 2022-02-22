@@ -5,42 +5,36 @@ import { ModalUploadService } from './modal-upload.service';
 @Component({
   selector: 'app-modal-upload',
   templateUrl: './modal-upload.component.html',
-  styles: [
-  ]
+  styles: []
 })
 export class ModalUploadComponent implements OnInit {
 
   imagenSubir: any;
   imagenTemp: any;
 
-
   constructor(
     public _subirArchivoService: SubirArchivoService,
     public _modalUploadService: ModalUploadService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-
   cerrarModal() {
-    this.imagenTemp = null; 
+    this.imagenTemp = null;
     this.imagenSubir = null;
 
     this._modalUploadService.ocultarModal();
   }
 
-
   seleccionImage( archivo: any ) {
-
 
     if ( !archivo ) {
       this.imagenSubir = null;
       return;
     }
 
-
-    if(archivo.type.indexOf('image') < 0 ) {
+    if ( archivo.type.indexOf('image') < 0 ) {
       swal('Sólo imágenes', 'El archivo seleccionado no es una imagen', 'error');
       this.imagenSubir = null;
       return;
@@ -55,20 +49,19 @@ export class ModalUploadComponent implements OnInit {
 
   }
 
-
   subirImagen() {
-    this._subirArchivoService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id)
-    .then( (resp:any) =>  {
 
-      this._modalUploadService.notificacion.emit( resp );
-      this.cerrarModal();
-      
-    })
+    this._subirArchivoService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id )
+          .then( (resp:any) => {
 
-    .catch( (err:any) => {
-      console.log( 'Error en la carga...')
-    })
-    
+            this._modalUploadService.notificacion.emit( resp );
+            this.cerrarModal();
+
+          })
+          .catch( (err:any) => {
+            console.log( 'Error en la carga... ');
+          });
+
   }
 
 }

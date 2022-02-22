@@ -121,6 +121,8 @@ export class UsuarioService {
      return true;
    })
   }
+
+  
   cambiarImagen( archivo: File, id: string ) {
 
     this._subirArchivoService.subirArchivo( archivo, 'usuarios', id )
