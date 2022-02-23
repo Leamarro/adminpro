@@ -7,6 +7,7 @@ import { SettingsService,
          UsuarioService,
          HospitalService,
          LoginGuardGuard,
+         AdminGuard,
          SubirArchivoService,
          MedicoService
     } from './service.index';
@@ -24,7 +25,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
   ],
   providers: [
     SettingsService, SidebarService, SharedService, UsuarioService, SubirArchivoService, 
-    LoginGuardGuard, ModalUploadService,HospitalService, MedicoService
+    LoginGuardGuard, AdminGuard , ModalUploadService,HospitalService, MedicoService
   ]
 })
 export class ServiceModule { }
