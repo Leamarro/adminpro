@@ -35,24 +35,28 @@ export class MedicoComponent implements OnInit {
     })
   }
 
-  ngOnInit(){
-      
+
+
+
+
+  ngOnInit() {
+
     this._hospitalService.cargarHospitales()
-    .subscribe( hospitales => this.hospitales = hospitales)
+          .subscribe( hospitales => this.hospitales = hospitales );
 
     this._modalUploadService.notificacion
-    .subscribe( (resp:any) => {
-      console.log( resp )
-      this.medico.img = resp.medico.img;
-    })
-      
-  }
+          .subscribe( (resp:any) => {
+            console.log(resp)
+            this.medico.img = resp.medico.img
+          });
 
+  }
   cargarMedico(id:any){
 
     this._medicoService.cargarMedico(id)
     .subscribe(medico => {
 
+      console.log(medico)
       this.medico = medico;
       this.medico.hospital = medico.hospital._id;
       this.cambioHospital( this.medico.hospital);

@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-
-
-
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/throw';
 import 'rxjs/add/operator/catch';
-
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { Observable } from 'rxjs/Observable';

@@ -1,0 +1,73 @@
+<button class="btn btn-primary" routerLink="/dashboard">
+    <i class="fa fa-arrow-circle-left"> Volver</i>
+  </button>
+
+
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarCiudad( input.value )" type="text" class="form-control" placeholder="Buscar Ciudad...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button (click)="crearCiudad()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                            <i class="fa fa-plus"></i> 
+                            Crear Ciudad
+                          </button>
+                </div>
+
+                <h3 class="card-title">Ciudades registradas ( <small> {{ _ciudadService.totalCiudades }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Ciudad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let ciudad of ciudades">
+                            <td>
+                                <img (click)="actualizarImagen( ciudad )" [src]="ciudad.img | imagen:'ciudad'" class="img-50 pointer">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="ciudad.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de la ciudad">
+                            </td>
+                            <td>
+                                <button (click)="guardarCiudad( ciudad )" class="btn btn-primary mr-1">
+                                        <i class="fa fa-save"></i>
+                                      </button>
+
+                                <button (click)="borrarCiudad( ciudad )" class="btn btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                      </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button (click)="cambiarDesde(-5)" class="btn btn-secondary">
+                      Anteriores
+                    </button>
+
+                <button (click)="cambiarDesde(5)" class="btn btn-secondary">
+                        Siguientes
+                    </button>
+
+            </div>
+        </div>
+    </div>
+</div>

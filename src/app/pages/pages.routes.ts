@@ -14,6 +14,8 @@ import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AdminGuard } from '../services/service.index';
 import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
+import { InboxComponent } from './inbox/inbox.component';
+import { CiudadComponent } from './ciudad/ciudad.component';
 
 
 
@@ -31,6 +33,7 @@ const pagesRoutes: Routes = [
             {path: 'rxjs', component:RxjsComponent,  data: { titulo: 'RxJs' }},
             {path: 'account-settings', component:AccoutSettingsComponent,  data: { titulo: 'Ajustes del Tema' }},
             {path: 'perfil', component:ProfileComponent,  data: { titulo: 'Perfil de Usuario' }},
+            {path: 'inbox', component:InboxComponent,  data: { titulo: 'Mensajes del Usuario' }},
             { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' } },
 
             //Mantenimientos
@@ -45,6 +48,7 @@ const pagesRoutes: Routes = [
 
             {path: 'hospitales', component:HospitalesComponent,  data: { titulo: 'Mantenimiento de Hospitales' }},
             {path: 'medicos', component:MedicosComponent,  data: { titulo: 'Mantenimiento de Medicos' }},
+            {path: 'ciudades', component:CiudadComponent,  data: { titulo: 'Mantenimiento de Ciudades' }},
             {path: 'medico/:id', component:MedicoComponent,  data: { titulo: 'Actualizar Medico' }},
             {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
         ]

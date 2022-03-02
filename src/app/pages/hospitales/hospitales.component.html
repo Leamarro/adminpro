@@ -1,3 +1,8 @@
+<button class="btn btn-primary" routerLink="/dashboard">
+  <i class="fa fa-arrow-circle-left"> Volver</i>
+</button>
+
+
 <div class="row animated fadeIn">
     <div class="col-12">
         <div class="card">
@@ -42,7 +47,7 @@
                                 <input [(ngModel)]="hospital.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del hospital">
                             </td>
                             <td>
-                                <button (click)="guardarHospital( hospital )" class="btn btn-primary">
+                                <button (click)="guardarHospital( hospital )" class="btn btn-primary mr-1">
                                       <i class="fa fa-save"></i>
                                     </button>
 
@@ -53,6 +58,14 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <button (click)="cambiarDesde(-5)" class="btn btn-secondary">
+                    Anteriores
+                  </button>
+
+                <button (click)="cambiarDesde(5)" class="btn btn-secondary">
+                      Siguientes
+                  </button>
 
             </div>
         </div>

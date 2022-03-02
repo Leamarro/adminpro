@@ -1,3 +1,8 @@
+<button class="btn btn-primary" routerLink="/dashboard">
+        <i class="fa fa-arrow-circle-left"> Volver</i>
+</button>
+
+
 <div class="row animated fadeIn">
     <div class="col-12">
         <div class="card">
@@ -42,7 +47,7 @@
                             <td>{{medico.nombre}}</td>
                             <td>{{medico.hospital.nombre}}</td>
                             <td>
-                                <button [routerLink]="['/medico', medico._id]" class="btn btn-primary">
+                                <button [routerLink]="['/medico', medico._id]" class="btn btn-primary mr-1">
                                             <i class="fa fa-edit"></i>
                                           </button>
 
@@ -54,6 +59,17 @@
                     </tbody>
 
                 </table>
+
+
+                <button (click)="cambiarDesde(-5)" class="btn btn-secondary">
+                    Anteriores
+                  </button>
+
+                <button (click)="cambiarDesde(5)" class="btn btn-secondary">
+                      Siguientes
+                  </button>
+
+
             </div>
         </div>
     </div>

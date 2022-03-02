@@ -14,9 +14,9 @@ export class HospitalService {
     public _usuarioService: UsuarioService
   ) { }
 
-  cargarHospitales() {
+  cargarHospitales(desde: number = 0) {
 
-    let url = URL_SERVICIOS + '/hospital';
+    let url = URL_SERVICIOS + '/hospital?desde=' + desde;
     return this.http.get( url )
               .map( (resp: any) => {
                 this.totalHospitales = resp.total;
@@ -73,5 +73,6 @@ export class HospitalService {
               });
 
   }
+
 
 }

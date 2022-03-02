@@ -20,6 +20,8 @@ import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { CiudadComponent } from './ciudad/ciudad.component';
 
 
 
@@ -42,7 +44,9 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         HospitalesComponent,
         MedicosComponent,
         MedicoComponent,
-        BusquedaComponent
+        BusquedaComponent,
+        InboxComponent,
+        CiudadComponent
     ],
     exports: [
         DashboardComponent,

@@ -14,6 +14,9 @@ declare var swal: any;
 export class HospitalesComponent implements OnInit {
 
   hospitales: Hospital[] = [];
+  totalRegistros: number = 0;
+  cargando: boolean = true;
+  desde: number = 0;
 
   constructor(
     public _hospitalService: HospitalService,
@@ -40,8 +43,17 @@ export class HospitalesComponent implements OnInit {
   }
 
   cargarHospitales() {
-    this._hospitalService.cargarHospitales()
-            .subscribe( hospitales => this.hospitales = hospitales );
+
+    this.cargando= true;
+
+    this._hospitalService.cargarHospitales(this.desde)
+            .subscribe( (hospitales:any) => {
+
+              this.totalRegistros = hospitales.total;
+              this.hospitales = hospitales.hospitales
+              this.hospitales = hospitales 
+              this.cargando = false
+            });
   }
 
 
@@ -84,6 +96,23 @@ export class HospitalesComponent implements OnInit {
   actualizarImagen( hospital: any ) {
 
     this._modalUploadService.mostrarModal( 'hospitales', hospital._id );
+
+  }
+
+  cambiarDesde( valor: number ) {
+
+    let desde = this.desde + valor;
+
+    if ( desde >= this.totalRegistros ) {
+      return;
+    }
+
+    if ( desde < 0 ) {
+      return;
+    }
+
+    this.desde += valor;
+    this.cargarHospitales();
 
   }
 

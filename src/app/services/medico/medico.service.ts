@@ -11,14 +11,15 @@ export class MedicoService {
 
   totalMedicos : number = 0;
 
+
   constructor(
     public http: HttpClient,
     public _usuarioService: UsuarioService
   ) { }
   
-  cargarMedicos(){
+  cargarMedicos(desde:number = 0){
 
-    let url = URL_SERVICIOS + '/medico';
+    let url = URL_SERVICIOS + '/medico?desde=' + desde;
 
     return this.http.get(url)
     .map((resp:any) =>{
@@ -59,7 +60,7 @@ export class MedicoService {
     })
   }
 
-  guardarMedico( medico:any) {
+  guardarMedico( medico:Medico) {
 
     let url = URL_SERVICIOS + '/medico';
 
@@ -72,6 +73,7 @@ export class MedicoService {
       return this.http.put( url, medico)
               .map( (resp:any) =>{
            swal('Medico actualizado', medico.nombre, 'success')
+           window.location.href = "/#/medicos"
            return resp.medico;
                 
               })
